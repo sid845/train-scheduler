@@ -1,3 +1,4 @@
+$(document).ready(function(){
 var config = {
     apiKey: "AIzaSyCKTFZhMVwjoZkZIBrNPTV-x4YWtvPfrO8",
     authDomain: "train-67d50.firebaseapp.com",
@@ -16,7 +17,7 @@ var config = {
   var trainFrequency=0;
   $("#trainAdd").on("click",function(event) {
     event.preventDefault();
-    alert("fbhdbvchds");
+    
     trainName=$("#name").val().trim();
     trainDestination=$("#destination").val().trim();
     trainTime=$("#time").val().trim();
@@ -28,7 +29,7 @@ var config = {
       time:trainTime,
       frequency:trainFrequency
     };
-    alert("fbhdbvchds");
+    
     database.ref().push(newTrain);
     
     alert("train successfully added");
@@ -43,11 +44,28 @@ var config = {
     trainTime.val("");
     trainFrequency.val("");
   });
-  database.ref().on("child_added",function(snapshot,prevChildKey){
+  database.ref().on("child_added",function(childSnapshot){
     var trainName = childSnapshot.val().name;
     var trainDestination = childSnapshot.val().destination;
     var trainTime = childSnapshot.val().time;
     var trainFrequency = childSnapshot.val().frequency;
+
+    var currentTime = moment().format("HH:mm");
+
+    var convertedTime = moment(time, "HH:mm").subtract(1, "years");
+    alert(convertedTime);
+    var diffTime = moment().diff(moment(convertedTime), "minutes");
+
+    var remainder = diffTime % freq;
+
+    var minutesUntilArrival = freq - remainder;
+
+    var nextTrain = moment().add(minutesUntilArrival, "minutes");
+
+    var arrival = moment(nextTrain).format("HH:mm");
+
+    $('#table > tbody').append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + arrival + "</td><td>" + minutesUntilArrival + "</td>");
+
   });
   
-  
+});
