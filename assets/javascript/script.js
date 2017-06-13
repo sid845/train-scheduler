@@ -26,7 +26,7 @@ var config = {
     var newTrain={
       name:trainName,
       destination:trainDestination,
-      time:trainTime,
+      trainTime:trainTime,
       frequency:trainFrequency
     };
     
@@ -34,37 +34,25 @@ var config = {
     
     alert("train successfully added");
     
-    console.log(newTrain.name);
-    console.log(newTrain.destination);
-    console.log(newTrain.time);
-    console.log(newTrain.frequency);
-    
     trainName.val("");
     trainDestination.val("");
     trainTime.val("");
     trainFrequency.val("");
   });
-  database.ref().on("child_added",function(childSnapshot){
+  database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     var trainName = childSnapshot.val().name;
     var trainDestination = childSnapshot.val().destination;
-    var trainTime = childSnapshot.val().time;
+    var trainTime = childSnapshot.val().trainTime;
     var trainFrequency = childSnapshot.val().frequency;
-
-    var currentTime = moment().format("HH:mm");
-
-    var convertedTime = moment(time, "HH:mm").subtract(1, "years");
-    alert(convertedTime);
-    var diffTime = moment().diff(moment(convertedTime), "minutes");
-
-    var remainder = diffTime % freq;
-
-    var minutesUntilArrival = freq - remainder;
-
-    var nextTrain = moment().add(minutesUntilArrival, "minutes");
-
-    var arrival = moment(nextTrain).format("HH:mm");
-
-    $('#table > tbody').append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + arrival + "</td><td>" + minutesUntilArrival + "</td>");
+    trainTime = moment().format("hh:mm");
+    var timeConverted = moment(trainTime, "hh:mm").subtract(1, "years");
+    var currentTime = moment();
+    var diffTime = moment().diff(moment(timeConverted), "minutes");
+    var tRemainder = diffTime % trainFrequency;
+    var tMinutesTillTrain = trainFrequency - tRemainder;
+    var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+    var nextArrival=moment(nextTrain).format("hh:mm")
+    $('#table > tbody').append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + nextArrival + "</td><td>" + tMinutesTillTrain + "</td>");
 
   });
   
