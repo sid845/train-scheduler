@@ -38,6 +38,7 @@ var config = {
     trainDestination.val("");
     trainTime.val("");
     trainFrequency.val("");
+    alert("hh");
   });
   database.ref().on("child_added", function(childSnapshot, prevChildKey) {
     var trainName = childSnapshot.val().name;
@@ -53,7 +54,7 @@ var config = {
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
     var nextArrival=moment(nextTrain).format("hh:mm")
     $('#table > tbody').append("<tr><td>" + trainName + "</td><td>" + trainDestination + "</td><td>" + trainFrequency + "</td><td>" + nextArrival + "</td><td>" + tMinutesTillTrain + "</td>");
-
+    
   });
   
 });

@@ -1,12 +1,27 @@
 body{
-  background:url("../images/bg.png");
+  background:url("../images/bg.jpg");
   
+}
+.thead{
+  font-family: tahoma;
+  font-weight: 900;
+}
+.panel-danger{
+  border-color: #8a0000;
+}
+.panel-heading{
+  background-color: darkred;
+  opacity: 0.5;
+  filter:alpha(opacity=50);
 }
 .jumbotron{
   text-align: center;
   margin-top: 20px;
-  background-color: #FC6D26;
+  background: url("../images/jumbotron.png");
+  opacity: 0.6;
+  filter: alpha(opacity=60)
 }
+
 #playerNames{
   margin:auto 0;
 }
@@ -16,6 +31,14 @@ img{
   text-align: center;
   margin:10px;
   border-radius: 30px;
+}
+.font{
+  font-weight: bolder;
+  font-size: 18px;
+}
+.hfont{
+  font-weight: bolder;
+  font-size: 20px;
 }
 #playerWins{
   height:200;

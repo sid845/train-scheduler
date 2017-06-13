@@ -14,7 +14,7 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-      <h1 class="heading"> Train Scheduler</h1>
+      <h1 class="heading thead"> TRAIN   SCHEDULER </h1>
     </div>
     <div class="panel panel-danger">
       <div class="panel-heading">Search Train</div>
@@ -30,36 +30,36 @@
         </div>
       </div>
     <div class="panel panel-danger">
-      <div class="panel-heading">Current train Schedule</div>
+      <div class="panel-heading hfont">Current train Schedule</div>
       <table class="table table-hover" id='table'>
         <thead>
           <tr>
-            <th>Train Name</th>
-            <th>Destination</th>
-            <th>Frequency (min)</th>
-            <th>Next Arrival</th>
-            <th>Minutes Away</th>
+            <th class="font">Train Name</th>
+            <th class="font">Destination</th>
+            <th class="font">Frequency (min)</th>
+            <th class="font">Next Arrival</th>
+            <th class="font">Minutes Away</th>
           </tr>
         </thead>
       <tbody>
       </tbody>
       </table>
     </div>
-    <div class="panel panel-danger">
-      <div class="panel-heading">Add Train</div>
+    <div class="panel panel-danger" id="add">
+      <div class="panel-heading hfont">Add Train</div>
         <div class="panel-body">
           <form class="navbar-form navbar-left" >
             <div class="form-group">
-              <p>Train Name:</p>
+              <p class="font">Train Name:</p>
                 <input type="text" class="form-control" id="name" placeholder="Search" size=120>
               
-              <p>Destination:</p>
+              <p class="font">Destination:</p>
                 <input type="text" class="form-control" id="destination" placeholder="Search" size=120>
               
-              <p>First Train Time(HH:MM - Military Time):</p>
+              <p class="font">First Train Time(HH:MM - Military Time):</p>
                 <input type="text" class="form-control" id="time" placeholder="Search" size=120>
               
-              <p>Frequency(min):</p>
+              <p class="font">Frequency(min):</p>
                 <input type="text" class="form-control" id="frequency" placeholder="Search" size=120>
               
             </div>
