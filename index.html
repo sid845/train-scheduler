@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <title>Train Scheduler</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="heading"> Train Scheduler</h1>
+    </div>
+    <div class="panel panel-danger">
+      <div class="panel-heading">Search Train</div>
+        <div class="panel-body">
+          <div class="row" id="searchTrain">
+            <form class="navbar-form " id="form" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter the Train's name" size="120">
+              </div>
+              <button type="submit" class="btn btn-danger">Submit</button>
+            </form>      
+          </div>
+        </div>
+      </div>
+    <div class="panel panel-danger">
+      <div class="panel-heading">Current train Schedule</div>
+      <table class="table">
+      <tr>
+        <th>Train Name</th>
+        <th>Destination</th>
+        <th>Frequency (min)</th>
+        <th>Next Arrival</th>
+        <th>Minutes Away</th>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      </table>
+    </div>
+    <div class="panel panel-danger">
+      <div class="panel-heading">Add Train</div>
+        <div class="panel-body">
+          <form class="navbar-form navbar-left" >
+            <div class="form-group">
+              <p>Train Name:</p>
+                <input type="text" class="form-control" id="name" placeholder="Search" size=120>
+              
+              <p>Destination:</p>
+                <input type="text" class="form-control" id="destination" placeholder="Search" size=120>
+              
+              <p>First Train Time(HH:mm-military time):</p>
+                <input type="text" class="form-control" id="time" placeholder="Search" size=120>
+              
+              <p>Frequency(min):</p>
+                <input type="text" class="form-control" id="frequency" placeholder="Search" size=120>
+              
+            </div>
+            <br><br>
+            <button type="submit" class="btn btn-danger" id="trainAdd">Submit</button>
+          </form>
+        </div>
+    </div>
+
+
+
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+  <script rel="javascript" src="assets/javascript/script.js">
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
