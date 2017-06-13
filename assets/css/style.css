@@ -5,21 +5,17 @@ body{
 .thead{
   font-family: tahoma;
   font-weight: 900;
+  
 }
 .panel-danger{
   border-color: #8a0000;
 }
-.panel-heading{
-  background-color: darkred;
-  opacity: 0.5;
-  filter:alpha(opacity=50);
-}
+
 .jumbotron{
   text-align: center;
   margin-top: 20px;
   background: url("../images/jumbotron.png");
-  opacity: 0.6;
-  filter: alpha(opacity=60)
+  
 }
 
 #playerNames{
