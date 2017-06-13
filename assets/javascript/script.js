@@ -10,14 +10,17 @@ var config = {
   
   database=firebase.database();
 
-
+  var trainName="";
+  var trainDestination="";
+  var trainTime="";
+  var trainFrequency=0;
   $("#trainAdd").on("click",function(event) {
     event.preventDefault();
-    
-    var trainName=$("#name").val().trim();
-    var trainDestination=$("#destination").val().trim();
-    var trainTime=$("#time").val().trim();
-    var trainFrequency=$("#frequency").val().trim();
+    alert("fbhdbvchds");
+    trainName=$("#name").val().trim();
+    trainDestination=$("#destination").val().trim();
+    trainTime=$("#time").val().trim();
+    trainFrequency=$("#frequency").val().trim();
     
     var newTrain={
       name:trainName,
@@ -25,7 +28,7 @@ var config = {
       time:trainTime,
       frequency:trainFrequency
     };
-    
+    alert("fbhdbvchds");
     database.ref().push(newTrain);
     
     alert("train successfully added");
